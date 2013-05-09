@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Tweet Now! 2: Multi-User</h1>
+  <div class='supercontainer'>
+  <h1>Tweets from the Past</h1>
 
   <%
     # In our real-world application, this is not what we want. Instead, we should
@@ -13,7 +14,12 @@
         <p><%=@user.username%></p>
         <form action='/submit_tweet' method='post'>
         <input type='text' placeholder="tweet here!" name="status">
-        <input id = "tweet_button" type="submit" value="tweet now">
+        <select>
+          <option value='1'>1 minute</option>
+          <option value='2'>2 minute</option>
+          <option value='5'>5 minutes</option>
+        </select>
+        <input id = "tweet_button" type="submit" value="Tweet!">
       </form>
       </p>
       <p>
@@ -23,5 +29,6 @@
   <% else %>
     <button><a href="/sign_in">Sign In with Twitter</a></button>
   <% end %>
-  
+  <div id="tweet_status"></div>
+  </div>
 </div>

@@ -27,7 +27,7 @@ end
 
 
 post '/submit_tweet' do
-  current_user.tweet(params["text"])
+  current_user.tweet(params['time'], params["text"])
 end
 
 get '/status/:job_id' do
