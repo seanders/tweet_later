@@ -14,20 +14,20 @@
         <p><%=@user.username%></p>
         <form action='/submit_tweet' method='post'>
         <input type='text' placeholder="tweet here!" name="status">
-        <select>
+        <select multiple='multiple'>
           <option value='1'>1 minute</option>
           <option value='2'>2 minute</option>
           <option value='5'>5 minutes</option>
         </select>
-        <input id = "tweet_button" type="submit" value="Tweet!">
+        <input id="tweet_button" type="submit" value="Tweet!" class='btn btn-success'>
       </form>
       </p>
       <p>
-        <button><a href="/sign_out">Sign Out</a></button>
+        <a href="/sign_out" class='btn btn-inverse'>Sign Out</a>
       </p>
     </div>
   <% else %>
-    <button><a href="/sign_in">Sign In with Twitter</a></button>
+    <a href="/sign_in" class='btn btn-primary'>Sign In with Twitter</a>
   <% end %>
   <div id="tweet_status"></div>
   </div>
